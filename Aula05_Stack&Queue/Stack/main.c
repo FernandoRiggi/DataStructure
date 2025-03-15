@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
+#include "quicksort.h"
 
 int main() {
+    // Testando a pilha
     t_stack* stack = create_stack(5);
     
     printf("Inserindo valores na pilha...\n");
@@ -35,6 +37,26 @@ int main() {
 
     destroy(stack);
     printf("Pilha destruída!\n");
-    
+
+    int n;
+
+    printf("\nDigite o tamanho do array para o QuickSort: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Digite %d elementos para ordenar:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    quicksort_iterative(arr, n);
+
+    printf("Array ordenado:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
     return 0;
 }

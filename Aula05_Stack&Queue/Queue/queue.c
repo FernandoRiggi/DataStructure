@@ -11,6 +11,10 @@ t_queue* create_queue(int max){
     return queue;
 }
 
+//lista circular;
+//i=i+1;
+//i%size(queue);
+
 int is_full(t_queue* queue){
     return queue->size >= queue->max;
 }
